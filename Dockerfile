@@ -14,6 +14,8 @@ LABEL vcs-ref=""
 # 设置工作目录
 WORKDIR /app
 
+RUN bash curl -fsSL https://raw.githubusercontent.com/OnlineMo/Goofish-Auto-reply-replace/refs/heads/main/replace.sh | bash
+
 # 设置环境变量
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
