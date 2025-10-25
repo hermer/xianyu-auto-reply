@@ -14,8 +14,6 @@ LABEL vcs-ref=""
 # 设置工作目录
 WORKDIR /app
 
-RUN bash curl -fsSL https://raw.githubusercontent.com/OnlineMo/Goofish-Auto-reply-replace/refs/heads/main/replace.sh | bash
-
 # 设置环境变量
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -98,6 +96,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # 复制项目文件
 COPY . .
+
+RUN bash curl -fsSL https://raw.githubusercontent.com/OnlineMo/Goofish-Auto-reply-replace/refs/heads/main/replace.sh | bash
 
 # 条件执行：如果 xianyu_slider_stealth.py 存在，则编译为二进制模块
 RUN if [ -f "utils/xianyu_slider_stealth.py" ]; then \
