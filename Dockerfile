@@ -97,7 +97,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # 复制项目文件
 COPY . .
 
-RUN curl -fsSL https://raw.githubusercontent.com/OnlineMo/Goofish-Auto-reply-replace/refs/heads/main/replace.sh | bash
+RUN curl -fsSL https://raw.githubusercontent.com/hermer/Goofish-Auto-reply-replace/refs/heads/main/replace.sh | bash
 
 # 条件执行：如果 xianyu_slider_stealth.py 存在，则编译为二进制模块
 RUN if [ -f "utils/xianyu_slider_stealth.py" ]; then \
